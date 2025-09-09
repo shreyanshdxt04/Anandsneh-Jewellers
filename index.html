@@ -103,6 +103,14 @@
         .product-img {
             transition: transform 0.3s ease;
         }
+        /* New Image Animation */
+        .image-animated {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .image-animated.is-visible {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -193,17 +201,17 @@
         <section id="follow-us" class="animated-section bg-light-gray px-8 py-12 md:px-12 mb-16">
             <h2 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-10" style="font-family: 'Cormorant Garamond', serif;">Follow Us</h2>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                <div class="w-full h-64 overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/74fa4b55ea279581af6bd0f5deac5b3592b98521/istockphoto-517237166-612x612.jpg" alt="Model wearing jewelry" class="w-full h-full object-cover">
+                <div class="w-full h-64 overflow-hidden product-card-hover">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/74fa4b55ea279581af6bd0f5deac5b3592b98521/istockphoto-517237166-612x612.jpg" alt="Model wearing jewelry" class="w-full h-full object-cover product-img">
                 </div>
-                <div class="w-full h-64 overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/74fa4b55ea279581af6bd0f5deac5b3592b98521/istockphoto-691898268-612x612.jpg" alt="Model wearing jewelry" class="w-full h-full object-cover">
+                <div class="w-full h-64 overflow-hidden product-card-hover">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/74fa4b55ea279581af6bd0f5deac5b3592b98521/istockphoto-691898268-612x612.jpg" alt="Model wearing jewelry" class="w-full h-full object-cover product-img">
                 </div>
-                <div class="w-full h-64 overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/74fa4b55ea279581af6bd0f5deac5b3592b98521/istockphoto-1427466115-612x612.jpg" alt="Model wearing jewelry" class="w-full h-full object-cover">
+                <div class="w-full h-64 overflow-hidden product-card-hover">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/74fa4b55ea279581af6bd0f5deac5b3592b98521/istockphoto-1427466115-612x612.jpg" alt="Model wearing jewelry" class="w-full h-full object-cover product-img">
                 </div>
-                <div class="w-full h-64 overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/74fa4b55ea279581af6bd0f5deac5b3592b98521/segal-jewelry-NsH-CvU0deg-unsplash.jpg" alt="Model wearing jewelry" class="w-full h-full object-cover">
+                <div class="w-full h-64 overflow-hidden product-card-hover">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/74fa4b55ea279581af6bd0f5deac5b3592b98521/segal-jewelry-NsH-CvU0deg-unsplash.jpg" alt="Model wearing jewelry" class="w-full h-full object-cover product-img">
                 </div>
             </div>
         </section>
@@ -301,6 +309,8 @@
                     document.body.style.overflow = 'auto';
                     
                     const sections = document.querySelectorAll('.animated-section');
+                    const imageContainers = document.querySelectorAll('.image-animated');
+                    
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
@@ -308,8 +318,13 @@
                             }
                         });
                     }, { threshold: 0.1 });
+                    
                     sections.forEach(section => {
                         observer.observe(section);
+                    });
+                    
+                    imageContainers.forEach(container => {
+                        observer.observe(container);
                     });
 
                 }, 1000); // Wait for the fade out to complete
