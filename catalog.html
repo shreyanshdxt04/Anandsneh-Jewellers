@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #222;
+            background-color: #f3eade;
+        }
+        .text-dark-gold {
+            color: #765D27;
+        }
+        .btn-primary {
+            background-color: #765D27;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(118, 93, 39, 0.3);
+        }
+        .product-card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card-hover:hover .product-img {
+            transform: scale(1.05);
+        }
+        .product-card-hover:hover .quick-view-overlay {
+            opacity: 1;
+        }
+        .product-img {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl sm:text-3xl font-bold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Anandsneh Jewellers</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#about" class="text-gray-700 hover:text-dark-gold transition duration-300">About Us</a>
+                <a href="catalog.html" class="text-gray-700 hover:text-dark-gold transition duration-300">Collections</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-dark-gold transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-dark-gold focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="flex flex-col items-center py-4 space-y-4">
+                <a href="index.html#about" class="text-gray-700 hover:text-dark-gold transition duration-300 w-full text-center py-2 border-b">About Us</a>
+                <a href="catalog.html" class="text-gray-700 hover:text-dark-gold transition duration-300 w-full text-center py-2 border-b">Collections</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-dark-gold transition duration-300 w-full text-center py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:px-6">
+        <h1 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-12" style="font-family: 'Cormorant Garamond', serif;">Our Collections</h1>
+
+        <!-- Women's Jewelry Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">Women's Jewelry</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Product Card 1 -->
+                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('women-1', 'Women Classic Gold Band', 'A timeless gold band crafted for elegance.', '30000', 'https://placehold.co/400x400/F0F0F0/765D27?text=Women+Product+1')">
+                    <img src="https://placehold.co/400x400/F0F0F0/765D27?text=Women+Product+1" alt="Women's Product 1" class="w-full h-auto object-cover transition-transform duration-300 product-img">
+                    <div class="p-4">
+                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Classic Gold Band</h3>
+                        <p class="text-sm mt-1 text-gray-600">₹30,000</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
+                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('women-2', 'Diamond Stud Earrings', 'Sparkling diamond studs for everyday glamour.', '55000', 'https://placehold.co/400x400/E8E8E8/765D27?text=Women+Product+2')">
+                    <img src="https://placehold.co/400x400/E8E8E8/765D27?text=Women+Product+2" alt="Women's Product 2" class="w-full h-auto object-cover transition-transform duration-300 product-img">
+                    <div class="p-4">
+                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Diamond Stud Earrings</h3>
+                        <p class="text-sm mt-1 text-gray-600">₹55,000</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
+                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('women-3', 'Pearl Drop Necklace', 'A delicate pearl necklace that adds sophistication.', '22000', 'https://placehold.co/400x400/F0F0F0/765D27?text=Women+Product+3')">
+                    <img src="https://placehold.co/400x400/F0F0F0/765D27?text=Women+Product+3" alt="Women's Product 3" class="w-full h-auto object-cover transition-transform duration-300 product-img">
+                    <div class="p-4">
+                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Pearl Drop Necklace</h3>
+                        <p class="text-sm mt-1 text-gray-600">₹22,000</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
+                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Men's Jewelry Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">Men's Jewelry</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Product Card 1 -->
+                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('men-1', 'Men's Gold Chain', 'A stylish gold chain for men.', '75000', 'https://placehold.co/400x400/D4C9C3/6C5B4E?text=Men+Product+1')">
+                    <img src="https://placehold.co/400x400/D4C9C3/6C5B4E?text=Men+Product+1" alt="Men's Product 1" class="w-full h-auto object-cover transition-transform duration-300 product-img">
+                    <div class="p-4">
+                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Men's Gold Chain</h3>
+                        <p class="text-sm mt-1 text-gray-600">₹75,000</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
+                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('men-2', 'Men's Diamond Ring', 'A bold diamond ring for the modern man.', '125000', 'https://placehold.co/400x400/E8E8E8/765D27?text=Men+Product+2')">
+                    <img src="https://placehold.co/400x400/E8E8E8/765D27?text=Men+Product+2" alt="Men's Product 2" class="w-full h-auto object-cover transition-transform duration-300 product-img">
+                    <div class="p-4">
+                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Men's Diamond Ring</h3>
+                        <p class="text-sm mt-1 text-gray-600">₹1,25,000</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
+                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kids' Jewelry Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">Kids' Jewelry</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Product Card 1 -->
+                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('kids-1', 'Teddy Bear Pendant', 'A cute teddy bear pendant for kids.', '8000', 'https://placehold.co/400x400/F0F0F0/765D27?text=Kids+Product+1')">
+                    <img src="https://placehold.co/400x400/F0F0F0/765D27?text=Kids+Product+1" alt="Kids' Product 1" class="w-full h-auto object-cover transition-transform duration-300 product-img">
+                    <div class="p-4">
+                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Teddy Bear Pendant</h3>
+                        <p class="text-sm mt-1 text-gray-600">₹8,000</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
+                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('kids-2', 'Mini Hoop Earrings', 'Adorable mini hoop earrings.', '6500', 'https://placehold.co/400x400/E8E8E8/765D27?text=Kids+Product+2')">
+                    <img src="https://placehold.co/400x400/E8E8E8/765D27?text=Kids+Product+2" alt="Kids' Product 2" class="w-full h-auto object-cover transition-transform duration-300 product-img">
+                    <div class="p-4">
+                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Mini Hoop Earrings</h3>
+                        <p class="text-sm mt-1 text-gray-600">₹6,500</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
+                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white p-8 max-w-lg w-full relative">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-800" onclick="closeProductModal()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="text-center">
+                <img id="modal-img" src="" alt="Product Image" class="w-full mb-4">
+                <h3 id="modal-title" class="text-lg md:text-2xl font-bold text-dark-gold mb-2" style="font-family: 'Cormorant Garamond', serif;"></h3>
+                <p id="modal-desc" class="text-gray-700 mb-4 text-sm"></p>
+                <p id="modal-price" class="text-lg md:text-xl font-semibold text-dark-gold mb-4"></p>
+                <button id="whatsapp-btn" class="btn-primary w-full px-6 py-3 font-medium text-sm sm:text-base transition duration-300 hover:opacity-90">Place Order via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-light-gray p-6 md:p-12 text-center text-gray-600">
+        <p class="text-dark-gold text-lg md:text-xl mb-2" style="font-family: 'Cormorant Garamond', serif;">Anandsneh Jewellers</p>
+        <p class="text-xs md:text-sm">&copy; 2025 Anandsneh Jewellers. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Modal functionality
+        function openProductModal(id, name, desc, price, imgUrl) {
+            document.getElementById('modal-img').src = imgUrl;
+            document.getElementById('modal-title').textContent = name;
+            document.getElementById('modal-desc').textContent = desc;
+            document.getElementById('modal-price').textContent = '₹' + price;
+            document.getElementById('whatsapp-btn').onclick = () => {
+                const whatsappMessage = `Hello, I would like to inquire about the following product: ${name} (ID: ${id}).`;
+                const whatsappUrl = `https://wa.me/916307438787?text=${encodeURIComponent(whatsappMessage)}`;
+                window.open(whatsappUrl, '_blank');
+            };
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('product-modal');
+            if (event.target == modal) {
+                closeProductModal();
+            }
+        }
+        // Mobile menu functionality
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
