@@ -55,15 +55,31 @@
             transition: opacity 1s ease-in-out;
             z-index: 1000;
         }
-        .logo-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            color: #765D27;
+        .logo {
+            width: 300px; /* New size */
+            height: auto;
             animation: fadeIn 2s ease-in-out;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        .loading-bar-container {
+            width: 300px; /* Adjusted to match new logo size */
+            height: 4px;
+            background-color: #E8D2AA;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        .loading-bar {
+            width: 0;
+            height: 100%;
+            background-color: #765D27;
+            animation: load 4s forwards;
+        }
+        @keyframes load {
+            from { width: 0; }
+            to { width: 100%; }
         }
         /* Content Animations */
         .animated-section {
@@ -93,14 +109,16 @@
 
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
-        <h1 class="logo-text text-4xl sm:text-5xl md:text-6xl mb-4">Anandsneh Jewellers</h1>
-        <p class="text-xl text-dark-gold">Crafting Bonds for Generations</p>
+        <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/661eb68eabd20f93ae8c98508dee595ce006d97c/Gemini_Generated_Image_orzk0iorzk0iorzk%20(2)%20(1).png" alt="Anandsneh Jewellers Logo" class="logo">
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
     </div>
 
     <main id="main-content" class="hidden">
         <!-- Header & Navigation -->
         <header class="bg-white shadow-sm sticky top-0 z-50">
-            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
                 <a href="#" class="text-2xl sm:text-3xl font-bold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Anandsneh Jewellers</a>
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="text-gray-700 hover:text-dark-gold transition duration-300">About Us</a>
@@ -122,90 +140,118 @@
             </div>
         </header>
         <section class="min-h-screen p-6 md:p-12 mb-12 flex flex-col justify-center items-center text-center bg-cover bg-center bg-no-repeat" style="background-image: url('https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/c02b24fb15b64a1b122ab072576bcd3a09a7e35d/1757437213205.jpg'); background-attachment: fixed;">
-            <div class="space-y-4 bg-white bg-opacity-70 p-8">
-                <h1 class="text-4xl md:text-6xl font-bold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Har Ghana, Ek khani kehta hai.</h1>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-800">For over 50 years, we haven't just crafted jewelry, we've crafted bonds. From a mother's blessings to a bride's dreams, every jewel carries a piece of your story and a promise of our trust.</p>
-                <div class="flex justify-center gap-4 pt-4">
-                    <a href="catalog.html" class="btn-primary px-6 py-3 font-medium text-sm sm:text-base">Explore Collection</a>
-                    <a href="#contact" class="btn-secondary px-6 py-3 font-medium text-sm sm:text-base bg-transparent border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white">Visit Us</a>
+            <div class="space-y-6 bg-white bg-opacity-70 p-8 md:p-12">
+                <h1 class="text-5xl md:text-7xl font-bold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Har Ghana, Ek khani kehta hai.</h1>
+                <p class="text-lg md:text-2xl max-w-4xl mx-auto text-gray-800">For over 50 years, we haven't just crafted jewelry, we've crafted bonds. From a mother's blessings to a bride's dreams, every jewel carries a piece of your story and a promise of our trust.</p>
+                <div class="flex justify-center gap-6 pt-6">
+                    <a href="catalog.html" class="btn-primary px-8 py-4 font-medium text-sm sm:text-base">Explore Collection</a>
+                    <a href="#contact" class="btn-secondary px-8 py-4 font-medium text-sm sm:text-base bg-transparent border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white">Visit Us</a>
                 </div>
             </div>
         </section>
 
         <!-- 2. About Us -->
-        <section id="about" class="animated-section container mx-auto px-4 py-8 md:px-6 mb-12">
-            <h2 class="text-center text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">About Us</h2>
+        <section id="about" class="animated-section container mx-auto px-8 py-12 md:px-12 mb-16">
+            <h2 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-10" style="font-family: 'Cormorant Garamond', serif;">About Us</h2>
             <div class="md:w-3/4 mx-auto text-center">
-                <p class="text-gray-700 leading-relaxed text-sm md:text-base mb-4">
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-6">
                     Over 50 years ago, Anandsneh Jewellers began with a simple dream - not just to sell jewelry, but to become a part of people's lives. Founded on the principles of purity, trust, and tradition, our jewels have adorned countless families across generations. From a mother's blessings to a bride's first step into her new life, every jewel we craft carries a story, an emotion, and a promise.
                 </p>
-                <p class="text-gray-700 leading-relaxed text-sm md:text-base">
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
                     Today, even after five decades, our values remain unchanged - to deliver authenticity, elegance, and trust in every creation. Anandsneh Jewellers - Where every jewel tells a story of love and trust.
                 </p>
             </div>
         </section>
 
+        <!-- 3. Luxury Redefined Section -->
+        <section id="luxury-redefined" class="animated-section container mx-auto px-8 py-12 md:px-12 mb-16">
+            <h2 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-10" style="font-family: 'Cormorant Garamond', serif;">Luxury Redefined</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-6">
+                        At Anandsneh Jewellers, we believe jewelry should be a true reflection of personal style and elegance. Our luxurious, modern designs are a blend of high-quality craftsmanship and ethical sourcing, ensuring that each piece not only looks stunning but is also responsibly made. We pride ourselves on celebrating individuality while forming meaningful connections with our valued customers.
+                    </p>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <img src="https://placehold.co/400x400/E5BA5A/765D27?text=Jewelry" alt="Luxury jewelry piece" class="w-full h-auto object-cover">
+                    <img src="https://placehold.co/400x400/C0B29A/765D27?text=Jewelry" alt="Luxury jewelry piece" class="w-full h-auto object-cover">
+                    <img src="https://placehold.co/400x400/D4C9C3/6C5B4E?text=Jewelry" alt="Luxury jewelry piece" class="w-full h-auto object-cover col-span-2">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Follow Us Section -->
+        <section id="follow-us" class="animated-section bg-light-gray px-8 py-12 md:px-12 mb-16">
+            <h2 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-10" style="font-family: 'Cormorant Garamond', serif;">Follow Us</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                <img src="https://placehold.co/400x400/E8D2AA/765D27?text=Model" alt="Model wearing jewelry" class="w-full h-auto object-cover">
+                <img src="https://placehold.co/400x400/E5BA5A/765D27?text=Model" alt="Model wearing jewelry" class="w-full h-auto object-cover">
+                <img src="https://placehold.co/400x400/C0B29A/765D27?text=Model" alt="Model wearing jewelry" class="w-full h-auto object-cover">
+                <img src="https://placehold.co/400x400/D4C9C3/6C5B4E?text=Model" alt="Model wearing jewelry" class="w-full h-auto object-cover">
+            </div>
+        </section>
+
         <!-- 5. Why Choose Us -->
-        <section id="why-choose-us" class="animated-section container mx-auto px-4 py-8 md:px-6 mb-12">
-            <h2 class="text-center text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">The Anandsneh Promise</h2>
+        <section id="why-choose-us" class="animated-section container mx-auto px-8 py-12 md:px-12 mb-16">
+            <h2 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-10" style="font-family: 'Cormorant Garamond', serif;">The Anandsneh Promise</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                <div class="p-6 bg-light-gray">
-                    <h3 class="text-lg md:text-xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">50+ Years of Legacy & Trust</h3>
-                    <p class="mt-2 text-gray-700 text-sm">Decades of experience and a reputation built on honesty.</p>
+                <div class="p-8 bg-light-gray">
+                    <h3 class="text-xl md:text-2xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">50+ Years of Legacy & Trust</h3>
+                    <p class="mt-4 text-gray-700 text-base">Decades of experience and a reputation built on honesty.</p>
                 </div>
-                <div class="p-6 bg-light-gray">
-                    <h3 class="text-lg md:text-xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">100% Certified Purity</h3>
-                    <p class="mt-2 text-gray-700 text-sm">BIS Hallmark & Certified Diamonds for your peace of mind.</p>
+                <div class="p-8 bg-light-gray">
+                    <h3 class="text-xl md:text-2xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">100% Certified Purity</h3>
+                    <p class="mt-4 text-gray-700 text-base">BIS Hallmark & Certified Diamonds for your peace of mind.</p>
                 </div>
-                <div class="p-6 bg-light-gray">
-                    <h3 class="text-lg md:text-xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Elegant Designs</h3>
-                    <p class="mt-2 text-gray-700 text-sm">Blending tradition with modernity for timeless appeal.</p>
+                <div class="p-8 bg-light-gray">
+                    <h3 class="text-xl md:text-2xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Elegant Designs</h3>
+                    <p class="mt-4 text-gray-700 text-base">Blending tradition with modernity for timeless appeal.</p>
                 </div>
-                <div class="p-6 bg-light-gray">
-                    <h3 class="text-lg md:text-xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Lifetime Buyback</h3>
-                    <p class="mt-2 text-gray-700 text-sm">Our commitment to transparency and lifelong value.</p>
+                <div class="p-8 bg-light-gray">
+                    <h3 class="text-xl md:text-2xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Lifetime Buyback</h3>
+                    <p class="mt-4 text-gray-700 text-base">Our commitment to transparency and lifelong value.</p>
                 </div>
-                <div class="p-6 bg-light-gray">
-                    <h3 class="text-lg md:text-xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Trusted by Generations</h3>
-                    <p class="mt-2 text-gray-700 text-sm">A family-run business that treats every customer like family.</p>
+                <div class="p-8 bg-light-gray">
+                    <h3 class="text-xl md:text-2xl font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Trusted by Generations</h3>
+                    <p class="mt-4 text-gray-700 text-base">A family-run business that treats every customer like family.</p>
                 </div>
             </div>
         </section>
 
         <!-- 6. Customer Testimonials -->
-        <section id="testimonials" class="animated-section container mx-auto px-4 py-8 md:px-6 mb-12">
-            <h2 class="text-center text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">Trusted by Generations</h2>
+        <section id="testimonials" class="animated-section container mx-auto px-8 py-12 md:px-12 mb-16">
+            <h2 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-10" style="font-family: 'Cormorant Garamond', serif;">Trusted by Generations</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <blockquote class="p-6 bg-light-gray relative">
-                    <p class="italic text-gray-700 text-sm md:text-base">"Our family has bought every wedding jewel from Anandsneh Jewellers. Their trust is unmatched."</p>
-                    <footer class="mt-4 font-semibold text-dark-gold text-sm">- A Happy Customer</footer>
+                <blockquote class="p-8 bg-light-gray relative">
+                    <p class="italic text-gray-700 text-base md:text-lg">"Our family has bought every wedding jewel from Anandsneh Jewellers. Their trust is unmatched."</p>
+                    <footer class="mt-6 font-semibold text-dark-gold text-base">- A Happy Customer</footer>
                 </blockquote>
-                <blockquote class="p-6 bg-light-gray relative">
-                    <p class="italic text-gray-700 text-sm md:text-base">"For us, Anandsneh is not a shop, it is family. They have been part of our celebrations for decades."</p>
-                    <footer class="mt-4 font-semibold text-dark-gold text-sm">- Loyal Client</footer>
+                <blockquote class="p-8 bg-light-gray relative">
+                    <p class="italic text-gray-700 text-base md:text-lg">"For us, Anandsneh is not a shop, it is family. They have been part of our celebrations for decades."</p>
+                    <footer class="mt-6 font-semibold text-dark-gold text-base">- Loyal Client</footer>
                 </blockquote>
             </div>
         </section>
 
         <!-- 7. Visit Us (Contact Section) -->
-        <section id="contact" class="animated-section container mx-auto px-4 py-8 md:px-6 mb-12">
-            <h2 class="text-center text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">Experience 50 Years of Legacy</h2>
-            <div class="flex flex-col md:flex-row gap-8 items-center">
+        <section id="contact" class="animated-section container mx-auto px-8 py-12 md:px-12 mb-16">
+            <h2 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-10" style="font-family: 'Cormorant Garamond', serif;">Experience 50 Years of Legacy</h2>
+            <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="md:w-1/2">
-                    <p class="text-lg text-dark-gold font-semibold mb-4">Address:</p>
-                    <p class="text-gray-700 mb-2 text-sm">Main Branch: Gajner Main Market, Kanpur Dehat</p>
-                    <p class="text-gray-700 mb-4 text-sm">Second Branch: Sarvankhera Market, Kanpur Dehat</p>
-                    <p class="text-lg text-dark-gold font-semibold mb-4">Phone / WhatsApp:</p>
-                    <a href="tel:+916307438787" class="block text-gray-700 mb-2 text-sm hover:text-dark-gold transition">+91 6307438787</a>
-                    <a href="tel:+919721375781" class="block text-gray-700 mb-4 text-sm hover:text-dark-gold transition">+91 9721375781</a>
-                    <p class="text-lg text-dark-gold font-semibold mb-2">Timings:</p>
-                    <p class="text-gray-700 mb-8 text-sm">10 am to 6 pm</p>
-                    <p class="text-center md:text-left text-lg md:text-xl italic text-dark-gold leading-relaxed">
+                    <p class="text-xl text-dark-gold font-semibold mb-4">Address:</p>
+                    <p class="text-gray-700 mb-2 text-base">Main Branch: Gajner Main Market, Kanpur Dehat</p>
+                    <p class="text-gray-700 mb-4 text-base">Second Branch: Sarvankhera Market, Kanpur Dehat</p>
+                    <p class="text-xl text-dark-gold font-semibold mb-4">Phone / WhatsApp:</p>
+                    <a href="tel:+916307438787" class="block text-gray-700 mb-2 text-base hover:text-dark-gold transition">+91 6307438787</a>
+                    <a href="tel:+919721375781" class="block text-gray-700 mb-4 text-base hover:text-dark-gold transition">+91 9721375781</a>
+                    <p class="text-xl text-dark-gold font-semibold mb-2">Timings:</p>
+                    <p class="text-gray-700 mb-8 text-base">10 am to 6 pm</p>
+                    <p class="text-center md:text-left text-xl md:text-2xl italic text-dark-gold leading-relaxed">
                         "Step into our world of purity and elegance. Visit Anandsneh Jewellers today."
                     </p>
                 </div>
                 <div class="md:w-1/2 w-full">
-                    <div class="bg-gray-200 overflow-hidden h-64 w-full">
+                    <div class="bg-gray-200 overflow-hidden h-96 w-full">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3570.627787352874!2d80.0888636750372!3d26.516088277027476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c51206124505f%3A0xb3f5451950d885a1!2sGajner%2C%20Kanpur%20Dehat%2C%20Uttar%20Pradesh%20209217!5e0!3m2!1sen!2sin!4v1694200000000!5m2!1sen!2sin"
                             width="100%"
@@ -221,9 +267,9 @@
         </section>
     </main>
     <!-- Footer -->
-    <footer class="bg-light-gray p-6 md:p-12 text-center text-gray-600">
-        <p class="text-dark-gold text-lg md:text-xl mb-2" style="font-family: 'Cormorant Garamond', serif;">Anandsneh Jewellers</p>
-        <p class="text-xs md:text-sm">&copy; 2025 Anandsneh Jewellers. All Rights Reserved.</p>
+    <footer class="bg-light-gray p-12 md:p-16 text-center text-gray-600">
+        <p class="text-dark-gold text-2xl md:text-3xl mb-4" style="font-family: 'Cormorant Garamond', serif;">Anandsneh Jewellers</p>
+        <p class="text-sm md:text-base">&copy; 2025 Anandsneh Jewellers. All Rights Reserved.</p>
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -250,7 +296,7 @@
                     });
 
                 }, 1000); // Wait for the fade out to complete
-            }, 2000); // Display loading screen for 2 seconds
+            }, 4000); // Display loading screen for 4 seconds
         });
         
         // Modal functionality
