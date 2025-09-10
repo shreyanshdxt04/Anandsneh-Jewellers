@@ -111,6 +111,13 @@
         .image-animated.is-visible {
             opacity: 1;
         }
+        .category-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -194,6 +201,45 @@
                          <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/f9d53f2f35c840afa42e9667d4a6e42913d2d63b/istockphoto-2212704975-612x612.jpg" alt="A close-up of a necklace with a heart-shaped stone" class="w-full h-full object-cover">
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- New: Our Collections Section -->
+        <section id="our-collections" class="animated-section container mx-auto px-8 py-12 md:px-12 mb-16">
+            <h2 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-10" style="font-family: 'Cormorant Garamond', serif;">Our Collections</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+                <a href="catalog.html#rings" class="category-card flex flex-col items-center bg-white p-6 shadow-md">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/a71801de50c36ed8887abb0108ffb3e62ce1b432/The%20Frecia%20Ring.jpg" alt="Rings" class="w-32 h-32 object-contain mb-4">
+                    <span class="text-xl font-medium text-dark-gold">Rings</span>
+                </a>
+                <a href="catalog.html#necklaces" class="category-card flex flex-col items-center bg-white p-6 shadow-md">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/ed31d4388671e40ceb2ab6dd8da70aa95d37cf6c/The%20Flutter%20And%20Floral%20Kids%20Necklace__.webp" alt="Necklaces" class="w-32 h-32 object-contain mb-4">
+                    <span class="text-xl font-medium text-dark-gold">Necklaces</span>
+                </a>
+                <a href="catalog.html#gold-coins" class="category-card flex flex-col items-center bg-white p-6 shadow-md">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/aadeb6c1eaa823499dd56e1157535b3cd937c4db/50%20gram%2024%20KT%20Lakshmi%20Ganesh%20Gold%20Coin__.webp" alt="Gold Coins" class="w-32 h-32 object-contain mb-4">
+                    <span class="text-xl font-medium text-dark-gold">Gold Coins</span>
+                </a>
+                <a href="catalog.html#anklets" class="category-card flex flex-col items-center bg-white p-6 shadow-md">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/11655094dd1f0d20f30fe276d42c4e43406d0a52/The%20Hygge%20Anklet.webp" alt="Anklets" class="w-32 h-32 object-contain mb-4">
+                    <span class="text-xl font-medium text-dark-gold">Anklets</span>
+                </a>
+                <a href="catalog.html#chains" class="category-card flex flex-col items-center bg-white p-6 shadow-md">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/d66d998e5bd5c311c02ff342c5ba63222ed38361/The%20Beridze%20Gold%20Chain%20For%20Him.webp" alt="Chains" class="w-32 h-32 object-contain mb-4">
+                    <span class="text-xl font-medium text-dark-gold">Chains</span>
+                </a>
+                <a href="catalog.html#mangalsutras" class="category-card flex flex-col items-center bg-white p-6 shadow-md">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/1f6acfc04c443790279e97a5be8a01cc05c56485/The%20Koyna%20Evil%20Eye%20Mangalsutra__.webp" alt="Mangalsutras" class="w-32 h-32 object-contain mb-4">
+                    <span class="text-xl font-medium text-dark-gold">Mangalsutras</span>
+                </a>
+                <a href="catalog.html#bracelets" class="category-card flex flex-col items-center bg-white p-6 shadow-md">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/914ca34bf47a1b204b6f0cf6a00bbb9be10f401b/The%20Adalin%20Bracelet__.webp" alt="Bracelets" class="w-32 h-32 object-contain mb-4">
+                    <span class="text-xl font-medium text-dark-gold">Bracelets</span>
+                </a>
+                 <a href="catalog.html#watch-ornaments" class="category-card flex flex-col items-center bg-white p-6 shadow-md">
+                    <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/0f1ecb20eb24f5d00ddd2454862f8cb2334b5520/The%20Cloe%20Mutliwearable%20Watch%20Band__.webp" alt="Watch Ornaments" class="w-32 h-32 object-contain mb-4">
+                    <span class="text-xl font-medium text-dark-gold">Watch Ornaments</span>
+                </a>
             </div>
         </section>
 
@@ -335,8 +381,8 @@
         function openProductModal(id, name, desc, price, imgUrl) {
             document.getElementById('modal-img').src = imgUrl;
             document.getElementById('modal-title').textContent = name;
-            document.getElementById('modal-desc').textContent = desc;
             document.getElementById('modal-price').textContent = '₹' + price;
+            document.getElementById('modal-desc').textContent = desc;
             document.getElementById('whatsapp-btn').onclick = () => {
                 const whatsappMessage = `Hello, I would like to inquire about the following product: ${name} (ID: ${id}).`;
                 const whatsappUrl = `https://wa.me/916307438787?text=${encodeURIComponent(whatsappMessage)}`;
