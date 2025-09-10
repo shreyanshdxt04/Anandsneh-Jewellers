@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Collections</title>
+    <title>Anandsneh Jewellers - Collections</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,6 +17,9 @@
         .text-dark-gold {
             color: #765D27;
         }
+        .bg-light-gray {
+            background-color: #F8F8F8;
+        }
         .btn-primary {
             background-color: #765D27;
             color: white;
@@ -26,25 +29,38 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(118, 93, 39, 0.3);
         }
-        .product-card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .product-img {
+            transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
         }
         .product-card-hover:hover .product-img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
-        .product-card-hover:hover .quick-view-overlay {
+        .modal {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .quick-view-btn {
+            background-color: #765D27;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .product-card-hover:hover .quick-view-btn {
             opacity: 1;
-        }
-        .product-img {
-            transition: transform 0.3s ease;
         }
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header -->
+
+    <!-- Header & Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl sm:text-3xl font-bold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Anandsneh Jewellers</a>
+        <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 text-2xl sm:text-3xl font-bold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">
+                <img src="https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/cdfee8850bd33f9823865a6b1f54ca563b94c658/Gemini_Generated_Image_orzk0iorzk0iorzk%20(2)%20(1)%20(1).png" alt="Anandsneh Jewellers Logo" class="h-24 w-auto">
+                <span>Anandsneh Jewellers</span>
+            </a>
             <div class="hidden md:flex space-x-8">
                 <a href="index.html#about" class="text-gray-700 hover:text-dark-gold transition duration-300">About Us</a>
                 <a href="catalog.html" class="text-gray-700 hover:text-dark-gold transition duration-300">Collections</a>
@@ -65,156 +81,189 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8 md:px-6">
-        <h1 class="text-center text-4xl md:text-5xl font-bold text-dark-gold mb-12" style="font-family: 'Cormorant Garamond', serif;">Our Collections</h1>
+    <main class="container mx-auto px-6 py-12">
+        <h1 class="text-center text-5xl md:text-6xl font-bold text-dark-gold mb-12" style="font-family: 'Cormorant Garamond', serif;">Our Collections</h1>
 
-        <!-- Women's Jewelry Section -->
-        <section class="mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">Women's Jewelry</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Product Card 1 -->
-                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('women-1', 'Women Classic Gold Band', 'A timeless gold band crafted for elegance.', '30000', 'https://placehold.co/400x400/F0F0F0/765D27?text=Women+Product+1')">
-                    <img src="https://placehold.co/400x400/F0F0F0/765D27?text=Women+Product+1" alt="Women's Product 1" class="w-full h-auto object-cover transition-transform duration-300 product-img">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Classic Gold Band</h3>
-                        <p class="text-sm mt-1 text-gray-600">₹30,000</p>
-                    </div>
-                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
-                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('women-2', 'Diamond Stud Earrings', 'Sparkling diamond studs for everyday glamour.', '55000', 'https://placehold.co/400x400/E8E8E8/765D27?text=Women+Product+2')">
-                    <img src="https://placehold.co/400x400/E8E8E8/765D27?text=Women+Product+2" alt="Women's Product 2" class="w-full h-auto object-cover transition-transform duration-300 product-img">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Diamond Stud Earrings</h3>
-                        <p class="text-sm mt-1 text-gray-600">₹55,000</p>
-                    </div>
-                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
-                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('women-3', 'Pearl Drop Necklace', 'A delicate pearl necklace that adds sophistication.', '22000', 'https://placehold.co/400x400/F0F0F0/765D27?text=Women+Product+3')">
-                    <img src="https://placehold.co/400x400/F0F0F0/765D27?text=Women+Product+3" alt="Women's Product 3" class="w-full h-auto object-cover transition-transform duration-300 product-img">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Pearl Drop Necklace</h3>
-                        <p class="text-sm mt-1 text-gray-600">₹22,000</p>
-                    </div>
-                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
-                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Category Filters -->
+        <div class="flex justify-center space-x-4 mb-12">
+            <button class="filter-btn px-6 py-2 border border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white transition-colors" data-category="all">All</button>
+            <button class="filter-btn px-6 py-2 border border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white transition-colors" data-category="rings">Rings</button>
+            <button class="filter-btn px-6 py-2 border border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white transition-colors" data-category="necklaces">Necklaces</button>
+            <button class="filter-btn px-6 py-2 border border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white transition-colors" data-category="gold-coins">Gold Coins</button>
+            <button class="filter-btn px-6 py-2 border border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white transition-colors" data-category="anklets">Anklets</button>
+            <button class="filter-btn px-6 py-2 border border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white transition-colors" data-category="chains">Chains</button>
+            <button class="filter-btn px-6 py-2 border border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white transition-colors" data-category="mangalsutras">Mangalsutras</button>
+            <button class="filter-btn px-6 py-2 border border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white transition-colors" data-category="bracelets">Bracelets</button>
+            <button class="filter-btn px-6 py-2 border border-dark-gold text-dark-gold hover:bg-dark-gold hover:text-white transition-colors" data-category="watch-ornaments">Watch Ornaments</button>
+        </div>
 
-        <!-- Men's Jewelry Section -->
-        <section class="mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">Men's Jewelry</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Product Card 1 -->
-                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('men-1', 'Men's Gold Chain', 'A stylish gold chain for men.', '75000', 'https://placehold.co/400x400/D4C9C3/6C5B4E?text=Men+Product+1')">
-                    <img src="https://placehold.co/400x400/D4C9C3/6C5B4E?text=Men+Product+1" alt="Men's Product 1" class="w-full h-auto object-cover transition-transform duration-300 product-img">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Men's Gold Chain</h3>
-                        <p class="text-sm mt-1 text-gray-600">₹75,000</p>
-                    </div>
-                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
-                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('men-2', 'Men's Diamond Ring', 'A bold diamond ring for the modern man.', '125000', 'https://placehold.co/400x400/E8E8E8/765D27?text=Men+Product+2')">
-                    <img src="https://placehold.co/400x400/E8E8E8/765D27?text=Men+Product+2" alt="Men's Product 2" class="w-full h-auto object-cover transition-transform duration-300 product-img">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Men's Diamond Ring</h3>
-                        <p class="text-sm mt-1 text-gray-600">₹1,25,000</p>
-                    </div>
-                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
-                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Kids' Jewelry Section -->
-        <section class="mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-dark-gold mb-8" style="font-family: 'Cormorant Garamond', serif;">Kids' Jewelry</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Product Card 1 -->
-                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('kids-1', 'Teddy Bear Pendant', 'A cute teddy bear pendant for kids.', '8000', 'https://placehold.co/400x400/F0F0F0/765D27?text=Kids+Product+1')">
-                    <img src="https://placehold.co/400x400/F0F0F0/765D27?text=Kids+Product+1" alt="Kids' Product 1" class="w-full h-auto object-cover transition-transform duration-300 product-img">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Teddy Bear Pendant</h3>
-                        <p class="text-sm mt-1 text-gray-600">₹8,000</p>
-                    </div>
-                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
-                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div class="bg-white border border-gray-200 overflow-hidden text-center group cursor-pointer relative product-card-hover" onclick="openProductModal('kids-2', 'Mini Hoop Earrings', 'Adorable mini hoop earrings.', '6500', 'https://placehold.co/400x400/E8E8E8/765D27?text=Kids+Product+2')">
-                    <img src="https://placehold.co/400x400/E8E8E8/765D27?text=Kids+Product+2" alt="Kids' Product 2" class="w-full h-auto object-cover transition-transform duration-300 product-img">
-                    <div class="p-4">
-                        <h3 class="text-md font-semibold text-dark-gold" style="font-family: 'Cormorant Garamond', serif;">Mini Hoop Earrings</h3>
-                        <p class="text-sm mt-1 text-gray-600">₹6,500</p>
-                    </div>
-                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 quick-view-overlay">
-                        <button class="text-white border border-white text-sm px-4 py-2 hover:bg-white hover:text-black">Quick View</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product cards will be injected here by JavaScript -->
+        </div>
     </main>
 
     <!-- Product Modal -->
-    <div id="product-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white p-8 max-w-lg w-full relative">
-            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-800" onclick="closeProductModal()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <div class="text-center">
-                <img id="modal-img" src="" alt="Product Image" class="w-full mb-4">
-                <h3 id="modal-title" class="text-lg md:text-2xl font-bold text-dark-gold mb-2" style="font-family: 'Cormorant Garamond', serif;"></h3>
-                <p id="modal-desc" class="text-gray-700 mb-4 text-sm"></p>
-                <p id="modal-price" class="text-lg md:text-xl font-semibold text-dark-gold mb-4"></p>
-                <button id="whatsapp-btn" class="btn-primary w-full px-6 py-3 font-medium text-sm sm:text-base transition duration-300 hover:opacity-90">Place Order via WhatsApp</button>
+    <div id="product-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal">
+        <div class="bg-white p-8 max-w-2xl w-full relative">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="md:w-1/2">
+                    <img id="modal-img" src="" alt="Product Image" class="w-full h-auto object-cover mb-4">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 id="modal-title" class="text-3xl font-bold text-dark-gold mb-2" style="font-family: 'Cormorant Garamond', serif;"></h3>
+                    <p id="modal-price" class="text-xl font-semibold mb-4"></p>
+                    <p id="modal-desc" class="text-gray-700 mb-6"></p>
+                    <button id="whatsapp-btn" class="btn-primary px-6 py-3 w-full">Place Order via WhatsApp</button>
+                </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Footer -->
-    <footer class="bg-light-gray p-6 md:p-12 text-center text-gray-600">
-        <p class="text-dark-gold text-lg md:text-xl mb-2" style="font-family: 'Cormorant Garamond', serif;">Anandsneh Jewellers</p>
-        <p class="text-xs md:text-sm">&copy; 2025 Anandsneh Jewellers. All Rights Reserved.</p>
+    <footer class="bg-light-gray p-12 md:p-16 text-center text-gray-600">
+        <p class="text-dark-gold text-2xl md:text-3xl mb-4" style="font-family: 'Cormorant Garamond', serif;">Anandsneh Jewellers</p>
+        <p class="text-sm md:text-base">&copy; 2025 Anandsneh Jewellers. All Rights Reserved.</p>
     </footer>
+
     <script>
-        // Modal functionality
+        const products = [
+            // Rings
+            { id: 'ring-1', name: 'The Frecia Ring', price: '61,460', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/a71801de50c36ed8887abb0108ffb3e62ce1b432/The%20Frecia%20Ring.jpg', category: 'rings', description: 'An elegant ring designed with intricate floral patterns.' },
+            { id: 'ring-2', name: 'The Giana Ring', price: '1,23,345', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/edc1b13c6182114ec0b5194e5619fa44d48dd30f/The%20Giana%20Ring.jpeg', category: 'rings', description: 'A statement ring with a large, stunning central diamond.' },
+            { id: 'ring-3', name: 'The Peacock Vivacity Ring', price: '81,292', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/df114d1f085e30c94ba1b007d591299fe4daa30e/The%20Peacock%20Vivacity%20Ring_.jpg', category: 'rings', description: 'Inspired by the majestic peacock, this ring features intricate carvings and vibrant gemstones.' },
+            { id: 'ring-4', name: 'The Petunia Ring', price: '75,759', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/a0ae6b29000d4e495bcd4b4e4fa1a5d39320e64b/The%20Petunia%20Ring.jpg', category: 'rings', description: 'A delicate and floral-inspired ring, perfect for everyday elegance.' },
+            { id: 'ring-5', name: 'The Twirled Wonder Ring', price: '1,03,706', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/475ed56dede65af715f7b7d05eb97f128b5f6491/The%20Twirled%20Wonder%20Ring.jpg', category: 'rings', description: 'A modern design with a unique twisted pattern and a sparkling stone.' },
+            { id: 'ring-6', name: 'The Nirvana Vanki Ring', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/98f5a5d380cc4f81cf027b31e14e52ad6be3a328/The%20Nirvana%20Vanki%20Ring__.jpg', category: 'rings', description: 'A traditional yet modern Vanki ring with intricate detailing.' },
+            { id: 'ring-7', name: 'The Mistee Band Ring', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/98f5a5d380cc4f81cf027b31e14e52ad6be3a328/The%20Mistee%20Band%20Ring__.jpg', category: 'rings', description: 'A sleek and simple band ring, perfect for stacking.' },
+            { id: 'ring-8', name: 'The Francoise Chevron Ring', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/96917b842caa9fb512e3b5ff78642c8b2487673f/The%20Francoise%20Chevron%20Ring__.jpg', category: 'rings', description: 'A unique chevron-shaped ring with a modern, geometric design.' },
+            { id: 'ring-9', name: 'The Basia Band For Him', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/5949dff0b74cd1199278229ef8fa9396ec058eb6/The%20Basia%20Band%20For%20Him.jpg', category: 'rings', description: 'A bold and elegant band ring designed specifically for men.' },
+            { id: 'ring-10', name: 'The Exalt Bypass Ring', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/4e75fa0888f7c789f29aeb23a931eb51a2d196e9/The%20Exalt%20Bypass%20Ring__.webp', category: 'rings', description: 'A stunning bypass ring with a unique and captivating design.' },
+
+            // Necklaces
+            { id: 'necklace-1', name: 'The Flutter And Floral Kids Necklace', price: '28,780', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/ed31d4388671e40ceb2ab6dd8da70aa95d37cf6c/The%20Flutter%20And%20Floral%20Kids%20Necklace__.webp', category: 'necklaces', description: 'A charming necklace for kids with a delicate floral and butterfly design.' },
+            { id: 'necklace-2', name: 'The Inez Bar Necklace', price: '90,813', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/90d864604a65df528cfdbb442e478d25f89716f8/The%20Inez%20Bar%20Necklace__.webp', category: 'necklaces', description: 'A modern bar necklace with a sleek, minimalist design.' },
+            { id: 'necklace-3', name: 'The Flair Necklace', price: '70,121', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/d5b34a9c094c8c1b38c765ab606ce40b1a44fcb3/The%20Flair%20Necklace__.webp', category: 'necklaces', description: 'A delicate necklace that adds a touch of flair to any outfit.' },
+            { id: 'necklace-4', name: 'The Emica Lariat Necklace', price: '52,076', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/da91a717598d52d71c79985379a8b06d01a36c3a/The%20Emica%20Lariat%20Necklace__.webp', category: 'necklaces', description: 'A stylish lariat necklace with a graceful, long drop.' },
+            { id: 'necklace-5', name: 'The Nicole Necklace', price: '2,26,923', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/e88bacc19472d65068fc7cd2cb29ea1d948da3e7/The%20Nicole%20Necklace__.webp', category: 'necklaces', description: 'An intricate, elegant necklace for a truly grand occasion.' },
+            { id: 'necklace-6', name: 'The Kalka Necklace', price: '1,41,386', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/ae504c5f65a3eb437cb70c6f327bf2e30813eb3e/The%20Kalka%20Necklace__.webp', category: 'necklaces', description: 'A classic and traditional necklace with stunning craftsmanship.' },
+            { id: 'necklace-7', name: 'The Heavenly Sunflower Necklace', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/13014c3f3dc2881d66119ecbb83619884dc39184/The%20Heavenly%20Sunflower%20Necklace__.webp', category: 'necklaces', description: 'A beautiful sunflower-inspired necklace that symbolizes light and joy.' },
+            { id: 'necklace-8', name: 'The Raekh Necklace', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/0de03b75614405199c4f0622b9049c9a2e73a1e8/The%20Raekh%20Necklace__.webp', category: 'necklaces', description: 'A stunning and unique necklace with a bold, contemporary design.' },
+            { id: 'necklace-9', name: 'The Protecter Evil Eye Kids Necklace', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/33f57c96a154d7e82d54f8a196a8501a8da65d77/The%20Protecter%20Evil%20Eye%20Kids%20Necklace__.webp', category: 'necklaces', description: 'A protective evil eye necklace designed for kids.' },
+            { id: 'necklace-10', name: 'The Chanbeli Necklace', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/ac24888018105169621072c0a0c1ed5a5f38ca86/The%20Chanbeli%20Necklace__.webp', category: 'necklaces', description: 'A beautiful necklace inspired by the classic Jasmine flower.' },
+            { id: 'necklace-11', name: 'The Karika Necklace', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/c88b4aeae14c4ed7afdfdab0daf424c1d1c98b56/The%20Karika%20Necklace__.webp', category: 'necklaces', description: 'A finely crafted necklace that blends modern and traditional elements.' },
+            { id: 'necklace-12', name: 'The Aaniya Necklace', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/415186f7d595daa118112517dd932c982bdcb9d6/The%20Aaniya%20Necklace__.webp', category: 'necklaces', description: 'An elegant and refined necklace for any occasion.' },
+            
+            // Gold Coins
+            { id: 'coin-1', name: '10 gram 24 KT Lakshmi Gold Coin', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/fb243249c47cf5ab7c559812004515ff14b57e94/10%20gram%2024%20KT%20Lakshmi%20Gold%20Coin__.webp', category: 'gold-coins', description: 'A beautiful 10-gram gold coin featuring the goddess Lakshmi.' },
+            { id: 'coin-2', name: '2 gram 24 KT Ganesh Gold Coin', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/608ad9124484a2d2d148700336c10c4e7026aceb/2%20gram%2024%20KT%20Ganesh%20Gold%20Coin__.webp', category: 'gold-coins', description: 'A 2-gram gold coin with a finely crafted Ganesh design.' },
+            { id: 'coin-3', name: '1 gram 24 KT Krishna Gold Coin', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/e43d6988ab7357924f7335757d1eba19cd431b7e/1%20gram%2024%20KT%20Krishna%20Gold%20Coin__.webp', category: 'gold-coins', description: 'A beautiful 1-gram gold coin featuring a Krishna design.' },
+            { id: 'coin-4', name: '50 gram 24 KT Lakshmi Ganesh Gold Coin', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/aadeb6c1eaa823499dd56e1157535b3cd937c4db/50%20gram%2024%20KT%20Lakshmi%20Ganesh%20Gold%20Coin__.webp', category: 'gold-coins', description: 'A substantial 50-gram gold coin featuring both Lakshmi and Ganesh.' },
+
+            // Anklets
+            { id: 'anklet-1', name: 'The Hygge Anklet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/11655094dd1f0d20f30fe276d42c4e43406d0a52/The%20Hygge%20Anklet.webp', category: 'anklets', description: 'A cozy and comfortable anklet with a delicate chain.' },
+            { id: 'anklet-2', name: 'The Aurore Anklet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/2f87c350d8b0e1bf2e342e5d11e2e60e38751343/The%20Aurore%20Anklet__.webp', category: 'anklets', description: 'A beautiful, sunrise-inspired anklet with a unique design.' },
+            { id: 'anklet-3', name: 'The Sinag Anklet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/3e853c3ad7116c909dc632ac6fdff5b15aa2fb17/The%20Sinag%20Anklet.webp', category: 'anklets', description: 'An elegant anklet with a smooth, flowing design.' },
+            { id: 'anklet-4', name: 'The Zurri Anklet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/8d203e531572c18f0e2448c99336bfa59fe7ed7c/The%20Zurri%20Anklet__.webp', category: 'anklets', description: 'A stunning anklet with a detailed, traditional pattern.' },
+            { id: 'anklet-5', name: 'The Selenia Anklet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/145363c80756dfe31cde1118703d29e2a83e0e1a/The%20Selenia%20Anklet__.webp', category: 'anklets', description: 'A delicate and ethereal anklet for a touch of everyday magic.' },
+
+            // Chains
+            { id: 'chain-1', name: 'The Beridze Gold Chain For Him', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/d66d998e5bd5c311c02ff342c5ba63222ed38361/The%20Beridze%20Gold%20Chain%20For%20Him.webp', category: 'chains', description: 'A bold and masculine gold chain designed for him.' },
+            { id: 'chain-2', name: 'The Abiral Gold Chain', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/9e089266c4fb2851eb6958472f61048236919f00/The%20Abiral%20Gold%20Chain__.webp', category: 'chains', description: 'A classic gold chain with a timeless, elegant design.' },
+            { id: 'chain-3', name: 'The Rolfo Gold Chain', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/1d4b6dbe02d8165444b92013df4d7e3482e5a3ca/The%20Rolfo%20Gold%20Chain__.webp', category: 'chains', description: 'A stylish and modern gold chain with unique links.' },
+            { id: 'chain-4', name: 'The Elijah Gold Chain', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/c9be08e5655a16714fa19aa2236d298870c24b18/The%20Elijah%20Gold%20Chain.webp', category: 'chains', description: 'A finely crafted gold chain that is perfect for everyday wear.' },
+
+            // Mangalsutras
+            { id: 'm-1', name: 'The Koyna Evil Eye Mangalsutra', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/1f6acfc04c443790279e97a5be8a01cc05c56485/The%20Koyna%20Evil%20Eye%20Mangalsutra__.webp', category: 'mangalsutras', description: 'A modern mangalsutra with a protective evil eye design.' },
+            { id: 'm-2', name: 'The Saija Mangalsutra Pendant', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/1b8027469d84fd717c74afba5c4e64b9de08e0ac/The%20Saija%20Mangalsutra%20Pendant__.webp', category: 'mangalsutras', description: 'A delicate mangalsutra pendant with a beautiful, intricate design.' },
+            { id: 'm-3', name: 'The Aadarshini Mangalsutra Pendant', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/ffc0050e475b4a67c904a792994c1f4e87d1ab05/The%20Aadarshini%20Mangalsutra%20Pendant__.webp', category: 'mangalsutras', description: 'A traditional mangalsutra pendant with a timeless, elegant design.' },
+            { id: 'm-4', name: 'The Aaruni Mangalsutra', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/22b8d3c5aff65bcdba7d1eab6b5185d83379609b/The%20Aaruni%20Mangalsutra__.webp', category: 'mangalsutras', description: 'A classic mangalsutra with a sleek, modern touch.' },
+            { id: 'm-5', name: 'The Amirana Mangalsutra Pendant', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/d62b985307d9d4669d7120ef2c935fd37c1ee2f3/The%20Amirana%20Mangalsutra%20Pendant__.webp', category: 'mangalsutras', description: 'A refined mangalsutra pendant with a captivating design.' },
+
+            // Bracelets
+            { id: 'b-1', name: 'The Adalin Bracelet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/914ca34bf47a1b204b6f0cf6a00bbb9be10f401b/The%20Adalin%20Bracelet__.webp', category: 'bracelets', description: 'A simple and elegant bracelet for a touch of sophistication.' },
+            { id: 'b-2', name: 'The Eiffel Bracelet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/3aa945d0621c0656949908e3fc0ada2d5448309c/The%20Eiffel%20Bracelet__.webp', category: 'bracelets', description: 'A unique bracelet inspired by the architectural design of the Eiffel Tower.' },
+            { id: 'b-3', name: 'The Melene Evil Eye Bracelet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/f100e33638330f55bee7a12348fbd17ee6cb541e/The%20Melene%20Evil%20Eye%20Bracelet__.webp', category: 'bracelets', description: 'A protective evil eye bracelet with a delicate chain.' },
+            { id: 'b-4', name: 'The Whimsical Bracelet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/5b85403806392ae2e8017bb8f75e590eefddfbe3/The%20Whimsical%20Bracelet__.webp', category: 'bracelets', description: 'A whimsical bracelet with playful charms and a delicate chain.' },
+            { id: 'b-5', name: 'The Siria Evil Eye Bracelet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/dc16209aa060fa00c1fa9be4b5d2efa78ff751b8/The%20Siria%20Evil%20Eye%20Bracelet.webp', category: 'bracelets', description: 'A stunning evil eye bracelet that combines style and protection.' },
+            { id: 'b-6', name: 'The Unify Toggle Bracelet', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/fe033ddfafc9e231f2faa9e97680be41a7846d90/The%20Unify%20Toggle%20Bracelet__.webp', category: 'bracelets', description: 'A modern toggle bracelet that unifies two distinct styles.' },
+
+            // Watch Ornaments
+            { id: 'wo-1', name: 'The Cloe Multiwearable Watch Band', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/0f1ecb20eb24f5d00ddd2454862f8cb2334b5520/The%20Cloe%20Mutliwearable%20Watch%20Band__.webp', category: 'watch-ornaments', description: 'A multi-wearable watch band that can be styled in different ways.' },
+            { id: 'wo-2', name: 'The Arkasa Watch Band', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/cef48777500954371669b973ff458d74bc2f70f0/The%20Arkasa%20Watch%20Band__.webp', category: 'watch-ornaments', description: 'A stylish watch band with an intricate, elegant design.' },
+            { id: 'wo-3', name: 'The Love Script Watch Band', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/b7647037018fcc1cf27e871ee858507b80267455/The%20Love%20Script%20Watch%20Band__.webp', category: 'watch-ornaments', description: 'A watch band with a beautiful love script design.' },
+            { id: 'wo-4', name: 'The Ordell Watch Charm', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/e3eaf0d8bc406174d56ba1c26cada22142f72488/The%20Ordell%20Watch%20Charm__.webp', category: 'watch-ornaments', description: 'A charming watch charm with a delicate and refined design.' },
+            { id: 'wo-5', name: 'The Colette Watch Charm', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/4d1c5b3af7021ba3fd77774830e563d4d7537c/The%20Colette%20Watch%20Charm__.webp', category: 'watch-ornaments', description: 'A minimalist watch charm that adds a touch of elegance.' },
+            { id: 'wo-6', name: 'The Eliore Watch Band', price: 'TBD', imageUrl: 'https://raw.githubusercontent.com/shreyanshdxt04/Anandsneh-Jewellers/a1ab20e34c539604877c6ca2e01911133a1043f4/The%20Eliore%20Watch%20Band__.webp', category: 'watch-ornaments', description: 'A stylish and modern watch band with a unique design.' },
+
+        ];
+
+        const productGrid = document.getElementById('product-grid');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function renderProducts(category = 'all') {
+            productGrid.innerHTML = '';
+            const filteredProducts = category === 'all' ? products : products.filter(p => p.category === category);
+
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white p-4 product-card-hover';
+                productCard.innerHTML = `
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="${product.imageUrl}" alt="${product.name}" class="product-img">
+                        <div onclick="openProductModal('${product.id}', '${product.name}', '${product.description}', '${product.price}', '${product.imageUrl}')" class="quick-view-btn absolute bottom-0 left-0 right-0 py-2 text-center text-sm font-medium">Quick View</div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <h3 class="text-xl font-semibold" style="font-family: 'Cormorant Garamond', serif;">${product.name}</h3>
+                        <p class="text-gray-700 mt-1">₹${product.price}</p>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            });
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                renderProducts(category);
+                filterButtons.forEach(btn => btn.classList.remove('bg-dark-gold', 'text-white'));
+                button.classList.add('bg-dark-gold', 'text-white');
+            });
+        });
+
+        // Initial render
+        renderProducts('all');
+        document.querySelector('[data-category="all"]').classList.add('bg-dark-gold', 'text-white');
+
         function openProductModal(id, name, desc, price, imgUrl) {
             document.getElementById('modal-img').src = imgUrl;
             document.getElementById('modal-title').textContent = name;
+            document.getElementById('modal-price').textContent = `₹${price}`;
             document.getElementById('modal-desc').textContent = desc;
-            document.getElementById('modal-price').textContent = '₹' + price;
+
             document.getElementById('whatsapp-btn').onclick = () => {
                 const whatsappMessage = `Hello, I would like to inquire about the following product: ${name} (ID: ${id}).`;
                 const whatsappUrl = `https://wa.me/916307438787?text=${encodeURIComponent(whatsappMessage)}`;
                 window.open(whatsappUrl, '_blank');
             };
+
             document.getElementById('product-modal').classList.remove('hidden');
         }
+
         function closeProductModal() {
             document.getElementById('product-modal').classList.add('hidden');
         }
-        // Close modal when clicking outside
+
         window.onclick = function(event) {
             const modal = document.getElementById('product-modal');
             if (event.target == modal) {
                 closeProductModal();
             }
         }
-        // Mobile menu functionality
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
         });
     </script>
